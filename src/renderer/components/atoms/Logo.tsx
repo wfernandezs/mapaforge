@@ -1,0 +1,106 @@
+/**
+ * Copyright (c) 2025 MapaForge
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+import React from 'react';
+
+export interface LogoProps {
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+}
+
+export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
+  const sizeClasses = {
+    sm: 'w-8 h-8',
+    md: 'w-12 h-12',
+    lg: 'w-16 h-16'
+  };
+
+  return (
+    <div className={`${sizeClasses[size]} ${className}`}>
+      <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Background circle */}
+        <circle cx="256" cy="256" r="256" fill="#2563eb"/>
+        
+        {/* Cat head */}
+        <ellipse cx="256" cy="200" rx="90" ry="85" fill="#1f2937"/>
+        
+        {/* Cat ears */}
+        <ellipse cx="200" cy="140" rx="25" ry="40" fill="#1f2937" transform="rotate(-25 200 140)"/>
+        <ellipse cx="312" cy="140" rx="25" ry="40" fill="#1f2937" transform="rotate(25 312 140)"/>
+        
+        {/* Inner ears */}
+        <ellipse cx="200" cy="140" rx="15" ry="25" fill="#f3f4f6" transform="rotate(-25 200 140)"/>
+        <ellipse cx="312" cy="140" rx="15" ry="25" fill="#f3f4f6" transform="rotate(25 312 140)"/>
+        
+        {/* Cat eyes */}
+        <ellipse cx="230" cy="185" rx="12" ry="15" fill="white"/>
+        <ellipse cx="282" cy="185" rx="12" ry="15" fill="white"/>
+        <ellipse cx="230" cy="185" rx="8" ry="10" fill="#1f2937"/>
+        <ellipse cx="282" cy="185" rx="8" ry="10" fill="#1f2937"/>
+        
+        {/* Cat nose */}
+        <path d="M 256 205 L 250 215 L 262 215 Z" fill="#f3f4f6"/>
+        
+        {/* Cat mouth */}
+        <path d="M 256 215 Q 245 225 235 220" stroke="#f3f4f6" strokeWidth="3" fill="none" strokeLinecap="round"/>
+        <path d="M 256 215 Q 267 225 277 220" stroke="#f3f4f6" strokeWidth="3" fill="none" strokeLinecap="round"/>
+        
+        {/* Cat whiskers */}
+        <line x1="180" y1="200" x2="220" y2="195" stroke="#f3f4f6" strokeWidth="3" strokeLinecap="round"/>
+        <line x1="180" y1="215" x2="220" y2="210" stroke="#f3f4f6" strokeWidth="3" strokeLinecap="round"/>
+        <line x1="292" y1="195" x2="332" y2="200" stroke="#f3f4f6" strokeWidth="3" strokeLinecap="round"/>
+        <line x1="292" y1="210" x2="332" y2="215" stroke="#f3f4f6" strokeWidth="3" strokeLinecap="round"/>
+        
+        {/* Cat body */}
+        <ellipse cx="256" cy="320" rx="85" ry="110" fill="#1f2937"/>
+        
+        {/* Cat arms */}
+        <ellipse cx="190" cy="290" rx="25" ry="60" fill="#1f2937"/>
+        <ellipse cx="322" cy="290" rx="25" ry="60" fill="#1f2937"/>
+        
+        {/* Book */}
+        <rect x="220" y="280" width="72" height="50" rx="4" fill="#f3f4f6"/>
+        <rect x="220" y="280" width="36" height="50" rx="4" fill="#e5e7eb"/>
+        <rect x="256" y="280" width="36" height="50" rx="4" fill="#f9fafb"/>
+        
+        {/* Book spine */}
+        <line x1="256" y1="280" x2="256" y2="330" stroke="#d1d5db" strokeWidth="2"/>
+        
+        {/* MapaForge logo on book */}
+        <circle cx="256" cy="305" r="12" fill="#2563eb"/>
+        <path d="M 256 299 L 251 305 L 256 311 L 261 305 Z" fill="white"/>
+        <circle cx="256" cy="305" r="8" stroke="white" strokeWidth="1.5" fill="none"/>
+        
+        {/* Cat paws holding book */}
+        <ellipse cx="190" cy="340" rx="18" ry="12" fill="#1f2937"/>
+        <ellipse cx="322" cy="340" rx="18" ry="12" fill="#1f2937"/>
+        
+        {/* Cat tail */}
+        <path d="M 170 350 Q 120 320 140 380 Q 160 400 170 350" fill="#1f2937"/>
+        
+        {/* Cat feet */}
+        <ellipse cx="230" cy="420" rx="20" ry="15" fill="#1f2937"/>
+        <ellipse cx="282" cy="420" rx="20" ry="15" fill="#1f2937"/>
+      </svg>
+    </div>
+  );
+};
